@@ -1,0 +1,35 @@
+$footerLinkColor: #eeeeee;
+.main {
+  flex: 1 0 auto;
+  .main-menu {
+    a {
+      color: #616161;
+      font-size: 1.2rem;
+      font-weight: bold;
+      outline: 0;
+    }
+  }
+}
+footer {
+  > .container {
+    display: flex;
+    flex-direction: row;
+    div {
+      display: flex;
+      flex-direction: column;
+      margin: 5px 20px;
+      h5 {
+        color: $footerLinkColor;
+      }
+      a {
+        color: $footerLinkColor;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .footer-copyright {
+    text-align: center;
+  }
+}

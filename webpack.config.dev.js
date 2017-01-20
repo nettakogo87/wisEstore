@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
@@ -49,6 +50,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       favicon: 'src/favicon.ico'
+    }),
+    new webpack.ProvidePlugin({
+      'window.jQuery': 'jquery'
     })
   ]
 };

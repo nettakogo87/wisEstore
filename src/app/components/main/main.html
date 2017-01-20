@@ -1,0 +1,31 @@
+<div class="main">
+  <nav class="main-menu">
+    <div class="nav-wrapper grey lighten-3">
+      <ul id="nav-mobile">
+        <li><a ui-sref="main.catalog" ui-sref-active="active">Каталог</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ui-view></ui-view>
+</div>
+<footer class="page-footer grey darken-3">
+  <div class="container">
+    <div>
+      <h5>Помощь покупателю </h5>
+      <a href="#">Адреса магазинов</a>
+      <a href="#">Обмен, возврат и ремонт</a>
+      <a href="#">Гарантия</a>
+    </div>
+    <div>
+      <h5>Контакты</h5>
+      <a href="#">8 (800) 000 00 00</a>
+      <a href="#">8 (800) 000 00 00</a>
+      <a href="#">8 (800) 000 00 00</a>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © {{$ctrl.copyrightDate}} Copyright Text
+    </div>
+  </div>
+</footer>
