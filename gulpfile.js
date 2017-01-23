@@ -3,9 +3,10 @@ var gutil = require('gulp-util');
 var connect = require('gulp-connect');
 var webpack = require('webpack');
 var WebpackDevServer = require("webpack-dev-server");
+var getWebpackConfig = require("./webpack.config.js");
 
 gulp.task('dev-build', function() {
-  var config = require('./webpack.config.dev.js');
+  var config = getWebpackConfig("dev");
   config.entry.app.unshift('webpack-dev-server/client?http://localhost:3000/', 'webpack/hot/dev-server');
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
   new WebpackDevServer(webpack(config), {
@@ -23,7 +24,7 @@ gulp.task('dev-build', function() {
 });
 
 gulp.task('build', function(callback) {
-  var config = require('./webpack.config.prod.js');
+  var config = getWebpackConfig("prod");
   webpack(config, function(err, stats) {
     if (err) {
       throw new gutil.PluginError("webpack", err);
