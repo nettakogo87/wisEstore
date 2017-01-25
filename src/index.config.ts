@@ -9,7 +9,7 @@ function setBackendBaseUrl() {
   };
 }
 
-export function config($locationProvider: angular.ILocationProvider, $httpProvider: angular.IHttpProvider) {
+export function baseAngularConfig($locationProvider: angular.ILocationProvider, $httpProvider: angular.IHttpProvider) {
   $locationProvider.html5Mode({ enabled: true, requireBase: false });
   $httpProvider.interceptors.push(setBackendBaseUrl);
 }

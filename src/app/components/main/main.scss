@@ -2,6 +2,8 @@ $footerLinkColor: #eeeeee;
 .main {
   flex: 1 0 auto;
   .main-menu {
+    position: fixed;
+    z-index: 3;
     a {
       color: #616161;
       font-size: 1.2rem;
@@ -11,6 +13,7 @@ $footerLinkColor: #eeeeee;
   }
 }
 footer {
+  z-index: 3;
   > .container {
     display: flex;
     flex-direction: row;

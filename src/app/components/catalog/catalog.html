@@ -1,3 +1,66 @@
-<div>
-  catalog
+<div class="content">
+  <p ng-if="$ctrl.showErrorMessage" class="error-message">
+    Oops! Something went wrong...
+  </p>
+  <div ng-show="$ctrl.isLoading" class="preloader-wrapper big active">
+    <div class="spinner-layer">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+  <wis-paging show-count="4" current-page-index="$ctrl.currentPageIndex" page-index-total-count="$ctrl.totalPageIndexCount" action="$ctrl.getNewState($pageIndex)"></wis-paging>
+  <div class="products" ng-class="{loading: $ctrl.isLoading}">
+    <div ng-repeat="product in $ctrl.products track by product.id" class="product">
+      <img ng-src="{{product.imageSrc}}" />
+      <div class="prod-info">
+        <div class="product-name">
+          {{product.name}}
+        </div>
+        <div class="product-cost">
+          {{product.cost | currency:""}} {{product.currency}}
+        </div>
+      </div>
+      <a class="waves-effect waves-light btn teal" ng-click="$ctrl.selectProduct(product)"><i class="material-icons left">add_shopping_cart</i>В корзину</a>
+    </div>
+  </div>
+  <wis-paging show-count="4" current-page-index="$ctrl.currentPageIndex" page-index-total-count="$ctrl.totalPageIndexCount" action="$ctrl.getNewState($pageIndex)"></wis-paging>
+
+  <!-- on-close='foo()' -->
+  <modal-dialog show="$ctrl.showDialog" width="auto" dialog-title="Добавить в корзину">
+    <div class="dialog-content">
+      <img class="dialog-prod-img" ng-src="{{$ctrl.selectedProduct.imageSrc}}" />
+      <div class="dialog-prod-info">
+        <div class="product-name">
+          {{$ctrl.selectedProduct.name}}
+        </div>
+        <div class="quantity-wrapper">
+          <div>
+            Кол-во:
+          </div>
+          <div class="quantity">
+            <div>{{$ctrl.countOfProducts}}</div>
+            <p class="range-field">
+              <input type="range" ng-model="$ctrl.countOfProducts" min="1" max="{{$ctrl.maxProductForAddToCart}}" />
+            </p>
+          </div>
+        </div>
+        <div class="cost-wrapper">
+          <div>
+            Сумма:
+          </div>
+          <div class="cost">
+            {{($ctrl.selectedProduct.cost * $ctrl.countOfProducts)| currency:""}} {{$ctrl.selectedProduct.currency}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="waves-effect waves-light btn teal" ng-click="$ctrl.addToCart($ctrl.selectedProduct, $ctrl.countOfProducts)"><i class="material-icons left">add_shopping_cart</i>Добавить</a>
+  </modal-dialog>
 </div>

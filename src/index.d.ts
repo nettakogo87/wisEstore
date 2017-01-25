@@ -3,6 +3,7 @@
 /// <reference path="../node_modules/@types/angular-ui-router/index.d.ts" />
 /// <reference path="../node_modules/@types/angular-mocks/index.d.ts" />
 /// <reference path="../node_modules/@types/materialize-css/index.d.ts" />
+/// <reference path="../node_modules/@types/ngstorage/index.d.ts" />
 
 declare module "*.json" {
   const value: any;

@@ -6,8 +6,16 @@ export function mainRoute($stateProvider: angular.ui.IStateProvider, $urlRouterP
       component: "wisMain"
     })
     .state("main.catalog", {
+      abstract: true,
       url: "catalog",
       component: "wisCatalog"
+    })
+    .state("main.catalog.results", {
+      url: "?count&skip",
+    })
+    .state("main.cart", {
+      url: "cart",
+      component: "wisCart"
     });
 
 

@@ -1,9 +1,11 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css";
+@import "../node_modules/ngmodal/dist/ng-modal.css";
+
 html{
   height: 100%;
   body {
-      color: #757575;
+      color: #616161;
       height: 100%;
       > ui-view {
         display: flex;
@@ -13,6 +15,9 @@ html{
           display: flex;
           height: 100vh;
           flex-direction: column;
+          .content {
+            padding: 80px 20px 20px 20px;
+          }
         }
       }
   }
