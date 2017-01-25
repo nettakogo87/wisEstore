@@ -1,3 +1,5 @@
+@import "../../../constants.scss";
+
 .pagination li.active {
-  background-color: #009688;
+  background-color: $mainButtonColor;
 }

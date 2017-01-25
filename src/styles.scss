@@ -1,11 +1,12 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css";
 @import "../node_modules/ngmodal/dist/ng-modal.css";
+@import "./constants.scss";
 
 html{
   height: 100%;
   body {
-      color: #616161;
+      color: $mainTextColor;
       height: 100%;
       > ui-view {
         display: flex;
@@ -18,6 +19,12 @@ html{
           .content {
             padding: 80px 20px 20px 20px;
           }
+        }
+      }
+      .btn {
+        background-color: $mainButtonColor;
+        &:hover {
+           background-color: $mainButtonActivColor;
         }
       }
   }

@@ -1,11 +1,12 @@
-$footerLinkColor: #eeeeee;
+@import "../../../constants.scss";
+
 .main {
   flex: 1 0 auto;
   .main-menu {
     position: fixed;
     z-index: 3;
     a {
-      color: #616161;
+      color: $menuLinkColor;
       font-size: 1.2rem;
       font-weight: bold;
       outline: 0;

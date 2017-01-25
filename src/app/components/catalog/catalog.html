@@ -27,7 +27,7 @@
           {{product.cost | currency:""}} {{product.currency}}
         </div>
       </div>
-      <a class="waves-effect waves-light btn teal" ng-click="$ctrl.selectProduct(product)"><i class="material-icons left">add_shopping_cart</i>В корзину</a>
+      <a class="waves-effect waves-light btn" ng-click="$ctrl.selectProduct(product)"><i class="material-icons left">add_shopping_cart</i>В корзину</a>
     </div>
   </div>
   <wis-paging show-count="4" current-page-index="$ctrl.currentPageIndex" page-index-total-count="$ctrl.totalPageIndexCount" action="$ctrl.getNewState($pageIndex)"></wis-paging>
@@ -61,6 +61,6 @@
         </div>
       </div>
     </div>
-    <a class="waves-effect waves-light btn teal" ng-click="$ctrl.addToCart($ctrl.selectedProduct, $ctrl.countOfProducts)"><i class="material-icons left">add_shopping_cart</i>Добавить</a>
+    <a class="waves-effect waves-light btn" ng-click="$ctrl.addToCart($ctrl.selectedProduct, $ctrl.countOfProducts)"><i class="material-icons left">add_shopping_cart</i>Добавить</a>
   </modal-dialog>
 </div>
