@@ -5,5 +5,4 @@ export interface IProduct {
   manufacturer?: string;
   imageSrc?: string;
   cost: number;
-  currency?: string;
 }

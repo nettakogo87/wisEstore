@@ -3,6 +3,7 @@ import { CatalogService } from "../../services/catalog.service";
 import { IProduct } from "../../lib/product.interface";
 import { ICatalogFindResult } from "../../lib/catalog-find-result.interface";
 import { IShoppingCartService } from "../../lib/shopping-cart-service.interface";
+import { Utils } from "../../utils";
 
 export class CatalogController implements angular.IController {
   public products: IProduct[] = [];
@@ -15,7 +16,7 @@ export class CatalogController implements angular.IController {
   private totalCount: number;
   public totalPageIndexCount: number;
   public showDialog: boolean;
-  public maxProductForAddToCart: number = 10;
+  public readonly maxProductForAddToCart: number = 10;
   public countOfProducts: number = 1;
   public selectedProduct: IProduct;
 
@@ -23,7 +24,8 @@ export class CatalogController implements angular.IController {
     private $state: angular.ui.IStateService,
     private $stateParams: angular.ui.IStateParamsService,
     private catalogService: CatalogService,
-    private shoppingCartService: IShoppingCartService) { }
+    private shoppingCartService: IShoppingCartService,
+    private utils: Utils) { }
 
   public $onInit() {
     this.currentCount = Number.parseInt(this.$stateParams["count"]) || 12;

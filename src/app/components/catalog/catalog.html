@@ -24,7 +24,7 @@
           {{product.name}}
         </div>
         <div class="product-cost">
-          {{product.cost | currency:""}} {{product.currency}}
+          {{product.cost | currency:""}} {{$ctrl.utils.currency}}
         </div>
       </div>
       <a class="waves-effect waves-light btn" ng-click="$ctrl.selectProduct(product)"><i class="material-icons left">add_shopping_cart</i>В корзину</a>
@@ -32,7 +32,6 @@
   </div>
   <wis-paging show-count="4" current-page-index="$ctrl.currentPageIndex" page-index-total-count="$ctrl.totalPageIndexCount" action="$ctrl.getNewState($pageIndex)"></wis-paging>
 
-  <!-- on-close='foo()' -->
   <modal-dialog show="$ctrl.showDialog" width="auto" dialog-title="Добавить в корзину">
     <div class="dialog-content">
       <img class="dialog-prod-img" ng-src="{{$ctrl.selectedProduct.imageSrc}}" />
@@ -56,7 +55,7 @@
             Сумма:
           </div>
           <div class="cost">
-            {{($ctrl.selectedProduct.cost * $ctrl.countOfProducts)| currency:""}} {{$ctrl.selectedProduct.currency}}
+            {{($ctrl.selectedProduct.cost * $ctrl.countOfProducts)| currency:""}} {{$ctrl.utils.currency}}
           </div>
         </div>
       </div>

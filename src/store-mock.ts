@@ -20,7 +20,6 @@ function mockRun($httpBackend: angular.IHttpBackendService): void {
           category: product.category,
           manufacturer: product.manufacturer,
           cost: Number.parseInt(cost.substr(1, cost.length)),
-          currency: cost.substr(0, 1)
         };
         return newProduct;
       });
