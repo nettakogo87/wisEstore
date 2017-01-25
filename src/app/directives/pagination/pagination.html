@@ -1,0 +1,34 @@
+<ul ng-show="$ctrl.isValidData()" class="pagination">
+  <li class="waves-effect" ng-class="{disabled:$ctrl.isFirstPage()}">
+    <a ng-click="$ctrl.prevPage()">
+      <i class="material-icons">chevron_left</i>
+    </a>
+  </li>
+  <li ng-show="$ctrl.showLeftDots()" class="waves-effect" ng-class="{active:$ctrl.isFirstPage()}">
+    <a ng-click="$ctrl.certainPage(0)">
+      1
+    </a>
+  </li>
+  <li ng-show="$ctrl.showLeftDots()" class="disabled">
+    <a href="#">...</a>
+  </li>
+  <li class="waves-effect" ng-class="{active:$ctrl.startPageIndex + $index === $ctrl.currentPageIndex}"
+      ng-repeat="n in [].constructor($ctrl.showCount) track by $index">
+    <a ng-click="$ctrl.certainPage($ctrl.startPageIndex + $index)">
+      {{$ctrl.startPageIndex + $index + 1}}
+    </a>
+  </li>
+  <li ng-show="$ctrl.showRightDots()" class="disabled">
+    <a href="#">...</a>
+  </li>
+  <li ng-show="$ctrl.showRightDots()" class="waves-effect" ng-class="{active:$ctrl.isLastPage()}">
+    <a ng-click="$ctrl.certainPage($ctrl.pageIndexTotalCount)">
+      {{$ctrl.pageIndexTotalCount + 1}}
+    </a>
+  </li>
+  <li class="waves-effect" ng-class="{disabled:$ctrl.isLastPage()}">
+    <a ng-click="$ctrl.nextPage()">
+      <i class="material-icons">chevron_right</i>
+    </a>
+  </li>
+</ul>
