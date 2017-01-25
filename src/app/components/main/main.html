@@ -8,6 +8,27 @@
         <li>
           <a ui-sref="main.cart" ui-sref-active="active">
             <i class="material-icons">shopping_cart</i>
+            <div ng-show="$ctrl.shoppingCartService.getTotalCount()" class="cart">
+              <div>
+                <div>
+                  В корзине
+                </div>
+                <div>
+                  {{$ctrl.shoppingCartService.getTotalCount()| pluralize:'товар'}}
+                </div>
+              </div>
+              <div>
+                <div>
+                  На сумму
+                </div>
+                <div>
+                  {{$ctrl.shoppingCartService.getTotalSum() | currency:""}} {{$ctrl.utils.currency}}
+                </div>
+              </div>
+            </div>
+            <div ng-show="!$ctrl.shoppingCartService.getTotalCount()" class="cart">
+              В корзине нет товаров
+            </div>
           </a>
         </li>
       </ul>

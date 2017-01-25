@@ -10,6 +10,27 @@
       font-size: 1.2rem;
       font-weight: bold;
       outline: 0;
+      display: flex;
+      flex-direction: row;
+      i {
+        margin-right: 5px;
+      }
+      .cart {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        margin: 0px 5px;
+        > div {
+          display: flex;
+          flex-direction: row;
+          line-height: 20px;
+          > div {
+            flex: 0 0 50%;
+          }
+        }
+      }
     }
   }
 }

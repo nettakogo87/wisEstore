@@ -15,6 +15,7 @@ import { ShoppingCartComponent } from "./app/components/shopping-cart/shopping-c
 import { PaginationComponent } from "./app/directives/pagination/pagination.directive";
 import { CatalogService } from "./app/services/catalog.service";
 import { ShoppingCartService } from "./app/services/shopping-cart.service";
+import { Pluralize } from "./app/filters/pluralize.filter";
 import { Utils } from "./app/utils";
 
 let wisStore = angular.module("wisStore", ["storeMock", "ui.router", "ngModal", "ngMessages", "ui.materialize", "ngStorage"]);
@@ -25,6 +26,7 @@ wisStore.component("wisCart", new ShoppingCartComponent());
 wisStore.component("wisPaging", new PaginationComponent());
 wisStore.service("catalogService", CatalogService);
 wisStore.service("shoppingCartService", ShoppingCartService);
+wisStore.filter("pluralize", Pluralize);
 wisStore.constant("utils", new Utils());
 
 configSetter(wisStore);

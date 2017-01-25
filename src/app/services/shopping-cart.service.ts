@@ -44,9 +44,19 @@ export class ShoppingCartService implements IShoppingCartService {
     return resultCartProducts;
   }
 
+  public getTotalCount() {
+    let totalCount: number = 0;
+    Object.keys(this.cart).forEach((productId: string) => {
+      let cartProduct = this.cart[productId];
+      if (cartProduct.product && cartProduct.count) {
+        totalCount += cartProduct.count;
+      }
+    });
+    return totalCount;
+  }
+
   public getTotalSum() {
     let totalSum: number = 0;
-    console.log("this.cart -> ", this.cart);
     Object.keys(this.cart).forEach((productId: string) => {
       let cartProduct: IShoppingCartProduct = this.cart[productId];
       if (cartProduct.product && cartProduct.count) {

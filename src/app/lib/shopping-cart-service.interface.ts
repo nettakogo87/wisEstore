@@ -8,4 +8,5 @@ export interface IShoppingCartService {
   decrease(productId: string, count: number): void;
   getShoppingCartProducts(): IShoppingCartProduct[];
   getTotalSum(): number;
+  getTotalCount(): number;
 }
