@@ -2,6 +2,7 @@ import * as angular from "angular";
 import "angular-ui-router";
 import "angular-messages";
 import "ngmodal";
+import "materialize-css";
 import "angular-materialize";
 import "./store-mock";
 

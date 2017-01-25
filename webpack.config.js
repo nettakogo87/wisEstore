@@ -62,7 +62,10 @@ module.exports = function getWebpackConfig(env = "dev") {
       favicon: 'src/favicon.ico'
     }),
     new webpack.ProvidePlugin({
-      'window.jQuery': 'jquery'
+      $: "jquery",
+      jQuery: "jquery",
+      jquery: "jquery",
+      "window.jQuery": "jquery"
     })
   ];
   if (env === "prod") {
