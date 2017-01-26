@@ -6,7 +6,7 @@
       </ul>
       <ul class="right">
         <li>
-          <a ui-sref="main.cart" ui-sref-active="active">
+          <a ng-if="!$ctrl.isCartState()" ui-sref="main.cart" ui-sref-active="active">
             <i class="material-icons">shopping_cart</i>
             <div ng-show="$ctrl.shoppingCartService.getTotalCount()" class="cart">
               <div>
@@ -29,6 +29,10 @@
             <div ng-show="!$ctrl.shoppingCartService.getTotalCount()" class="cart">
               В корзине нет товаров
             </div>
+          </a>
+          <a ng-if="$ctrl.isCartState()" ui-sref="main.catalog.results" ui-sref-active="active">
+            Вернуться к покупкам
+            <i class="material-icons">keyboard_arrow_right</i>
           </a>
         </li>
       </ul>

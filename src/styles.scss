@@ -16,12 +16,9 @@ html{
           display: flex;
           height: 100vh;
           flex-direction: column;
-          .content {
-            padding: 80px 20px 20px 20px;
-          }
         }
       }
-      .btn {
+      .btn, .btn-floating {
         background-color: $mainButtonColor;
         &:hover {
            background-color: $mainButtonActivColor;

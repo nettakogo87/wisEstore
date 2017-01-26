@@ -1,6 +1,7 @@
 @import "../../../constants.scss";
 
-.content {
+.catalog-content {
+  padding: $conentPadding;
   display: flex;
   flex-direction: column;
   align-items: center;

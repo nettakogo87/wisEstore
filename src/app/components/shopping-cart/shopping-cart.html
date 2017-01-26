@@ -1,3 +1,58 @@
-<div>
-  {{$ctrl.test}}
+<div class="cart-content">
+  <div class="cart-title">
+    Корзина
+  </div>
+  <div ng-if="$ctrl.products.length > 0">
+    <div class="cart-products">
+      <div ng-repeat="cartProduct in $ctrl.products track by cartProduct.product.id" class="cart-product grey lighten-3">
+        <img ng-src="{{cartProduct.product.imageSrc}}" />
+        <div class="cart-product-info-wrapper">
+          <div class="cart-product-info">
+            <div class="product-info">
+              <div class="name">
+                {{cartProduct.product.name}}
+              </div>
+              <div class="category">
+                {{cartProduct.product.category}}
+              </div>
+            </div>
+            <div class="count-wrapper">
+              <a class="waves-effect waves-light btn-floating" ng-class="{disabled:cartProduct.count === 1}" ng-click="$ctrl.decrease(cartProduct)"><i class="material-icons">remove</i></a>
+              <span class="count">{{cartProduct.count}}</span>
+              <a class="waves-effect waves-light btn-floating" ng-click="$ctrl.increase(cartProduct)"><i class="material-icons">add</i></a>
+            </div>
+            <div class="cost-wrapper">
+              <div class="total-cost-sum">
+                {{(cartProduct.product.cost * cartProduct.count) | currency:""}} {{$ctrl.utils.currency}}
+              </div>
+              <div ng-if="cartProduct.count > 1" class="cost">
+                {{cartProduct.count}} шт. × {{cartProduct.product.cost | currency:""}} {{$ctrl.utils.currency}}
+              </div>
+            </div>
+          </div>
+          <div class="remove-button">
+            <a class="waves-effect waves-light btn" ng-click="$ctrl.remove(cartProduct)"><i class="material-icons left">remove_shopping_cart</i>Удалить</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-wrapper grey darken-3">
+      <div class="total-wrapper">
+        <div>
+          Итого
+        </div>
+        <div class="total">
+          {{$ctrl.shoppingCartService.getTotalSum()| currency:""}} {{$ctrl.utils.currency}}
+        </div>
+      </div>
+      <div class="order-action">
+        <a class="waves-effect waves-light btn"><i class="material-icons left">payment</i>Оформить заказ</a>
+      </div>
+    </div>
+  </div>
+  <div ng-if="$ctrl.products.length === 0" class="empty-cart">
+    <div class="title">В вашей корзине пусто :(</div>
+    <p class="message">Для того чтобы совершать покупки в нашем магазине, Вам не обязательно проходить регистрацию.</br> Вместо этого Вы можете сразу перейти к покупкам!</p>
+    <a class="waves-effect waves-light btn" ui-sref="main.catalog.results"><i class="material-icons left">shop</i>Перейти к покупкам</a>
+  </div>
 </div>

@@ -1,0 +1,108 @@
+@import "../../../constants.scss";
+
+.cart-content {
+  padding: $conentPadding;
+  .cart-title {
+    color: $mainTextColor;
+    font-size: 2rem;
+    margin-left: 55px;
+  }
+  .empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 50px;
+    .title {
+      font-size: 1.8rem;
+    }
+    .message {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+  }
+  .cart-products {
+    flex: 0 0 70%;
+    .cart-product {
+      margin: 15px 55px;
+      padding: 20px;
+      box-shadow: 1px 1px 2px #424242;
+      display: flex;
+      flex-direction: row;
+      img {
+        min-width: 265px;
+      }
+      .cart-product-info-wrapper {
+        flex: 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .cart-product-info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .product-info {
+            flex: 0 0 55%;
+            padding: 0px 10px;
+            text-align: justify;
+            .name {
+              color: $mainTextColor;
+              font-weight: bold;
+              font-size: 1.2rem;
+              overflow: hidden;
+              max-height: 7rem;
+            }
+          }
+          .count-wrapper {
+            flex: 0 0 25%;
+            padding: 0px 10px;
+            display: flex;
+            flex-direction: row;
+            .count {
+              font-size: 1.3rem;
+              padding: 6px 5px;
+            }
+          }
+          .cost-wrapper {
+            flex: 1 0 20%;
+            white-space: nowrap;
+            .total-cost-sum {
+              color: $mainTextColor;
+              font-weight: bold;
+            }
+          }
+        }
+        .remove-button {
+          text-align: end;
+        }
+      }
+    }
+  }
+  .order-wrapper {
+    color: $footerLinkColor;
+    flex: 0 0 25%;
+    margin: 15px 55px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .total-wrapper {
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 10px;
+      .total {
+        padding-left: 30px;
+        font-weight: bold;
+      }
+    }
+    .order-action {
+      text-align: center;
+    }
+  }
+}
